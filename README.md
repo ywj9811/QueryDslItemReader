@@ -55,16 +55,6 @@ public QueryDslNoOffsetPagingItemReader<Product> reader() {
 }
 ```
 
-##Logging
-```yaml
-logging:
-  level:
-    org:
-      springframework:
-        batch: 
-            item.querydsl.reader: DEBUG
-```
-
 ### 참조
   - https://github.com/jojoldu/spring-batch-querydsl
   - https://jojoldu.tistory.com/473
