@@ -3,9 +3,9 @@
 ## Usage
 
 - Java 17
-- SpringBoot 3.xx
-- SpringBatch 5.xx
-- Querydsl 5.xx
+- SpringBoot 3.2.5
+- SpringBatch 5.1.1
+- Querydsl 5.0.0
 
 ## Dependency
 
