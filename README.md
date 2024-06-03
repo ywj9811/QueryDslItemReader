@@ -21,8 +21,8 @@ dependencies {
 ### QueryDslPagingItemReader
 ```java
 @Bean
-public QuerydslPagingItemReader<Product> reader() {
-    return new QuerydslPagingItemReader<>(emf, chunkSize, queryFactory -> queryFactory
+public QueryDslPagingItemReader<Product> reader() {
+    return new QueryDslPagingItemReader<>(emf, chunkSize, queryFactory -> queryFactory
             .selectFrom(product)
             .where(product.createDate.eq(jobParameter.getTxDate())));
 }
@@ -31,25 +31,25 @@ public QuerydslPagingItemReader<Product> reader() {
 ### QueryDslNoOffsetPagingItemReader
 ```java
 @Bean
-public QuerydslNoOffsetPagingItemReader<Product> reader() {
+public QueryDslNoOffsetPagingItemReader<Product> reader() {
     // 1. No Offset Option with Number
-    QuerydslNoOffsetNumberOptions<Product, Long> options =
-            new QuerydslNoOffsetNumberOptions<>(product.id, Expression.ASC);
+    QueryDslNoOffsetNumberOptions<Product, Long> options =
+            new QueryDslNoOffsetNumberOptions<>(product.id, Expression.ASC);
 
-    // 2. Querydsl Reader
-    return new QuerydslNoOffsetPagingItemReader<>(emf, chunkSize, options, queryFactory -> queryFactory
+    // 2. QueryDsl Reader
+    return new QueryDslNoOffsetPagingItemReader<>(emf, chunkSize, options, queryFactory -> queryFactory
                     .selectFrom(product)
                     .where(product.createDate.eq(txDate)));
 }
 ```
 ```java
-public QuerydslNoOffsetPagingItemReader<Product> reader() {
+public QueryDslNoOffsetPagingItemReader<Product> reader() {
     // 1. No Offset Option with String
-    QuerydslNoOffsetStringOptions<Product> options =
-            new QuerydslNoOffsetStringOptions<>(product.name, Expression.DESC);
+    QueryDslNoOffsetStringOptions<Product> options =
+            new QueryDslNoOffsetStringOptions<>(product.name, Expression.DESC);
 
-    // 2. Querydsl Reader
-    return new QuerydslNoOffsetPagingItemReader<>(emf, chunkSize, options, queryFactory -> queryFactory
+    // 2. QueryDsl Reader
+    return new QueryDslNoOffsetPagingItemReader<>(emf, chunkSize, options, queryFactory -> queryFactory
             .selectFrom(product)
             .where(product.createDate.eq(txDate)));
 }
