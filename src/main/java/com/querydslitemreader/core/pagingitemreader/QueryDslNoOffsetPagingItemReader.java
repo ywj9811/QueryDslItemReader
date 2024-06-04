@@ -1,9 +1,9 @@
-package com.querydslitemreader.core.pagingitemreader.options;
+package com.querydslitemreader.core.pagingitemreader;
 
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.querydslitemreader.core.pagingitemreader.QueryDslPagingItemReader;
+import com.querydslitemreader.core.pagingitemreader.options.QueryDslNoOffsetOptions;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.CollectionUtils;
