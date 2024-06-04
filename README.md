@@ -11,11 +11,11 @@
 
 ```
 repositories {
-    maven { url 'https://jitpack.io' }
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-		implementation 'com.github.ywj9811:QueryDslItemReader:v0.0.3'
+	implementation 'com.github.ywj9811:QueryDslItemReader:v1.0.0'
 }
 ```
 ### QueryDslPagingItemReader
