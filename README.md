@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.github.ywj9811:QueryDslItemReader:v1.0.0'
+	implementation 'com.github.ywj9811:QueryDslItemReader:v1.0.1'
 }
 ```
 ### QueryDslPagingItemReader
@@ -24,8 +24,16 @@ dependencies {
 public QueryDslPagingItemReader<Product> reader() {
     return new QueryDslPagingItemReader<>(emf, chunkSize, queryFactory -> queryFactory
             .selectFrom(product)
-            .where(product.createDate.eq(jobParameter.getTxDate())));
+            .where(product.createDate.eq(txDate)));
 }
+```
+
+### QueryDslZeroPagingItemReader (offset is always zero)
+```java
+public QueryDslZeroPagingItemReader<Product> reader() {
+    return new QueryDslZeroPagingItemReader<>(emf, chunkSize, queryFactory -> queryFactory
+            .selectFrom(product)
+            .where(product.createDate.eq(txDate)));
 ```
 
 ### QueryDslNoOffsetPagingItemReader
