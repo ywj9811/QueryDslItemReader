@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.github.ywj9811:QueryDslItemReader:v1.0.1'
+	implementation 'com.github.ywj9811:querydsl-itemreader:v1.0.1'
 }
 ```
 ### QueryDslPagingItemReader
